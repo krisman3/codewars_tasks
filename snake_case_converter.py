@@ -13,10 +13,21 @@ Examples
 
 
 def to_camel_case(text):
-    for i in range(len(text)):
-        if i in ['-', '_']:
-            pass
+    merged_word = ''
+    i = 0
+    while i < len(text):
+        if text[i] in ['-', '_']:
+            if text[i + 1].isupper():
+                merged_word += text[i + 1]
+                i += 1
+            else:
+                merged_word += text[i + 1].upper()
+                i += 1
+        else:
+            merged_word += text[i]
+        i += 1
+    return merged_word
 
 
 if __name__ == "__main__":
-    to_camel_case()
+    print(to_camel_case("the-stealth-warrior"))
