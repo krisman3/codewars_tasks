@@ -11,15 +11,21 @@ def narcissistic(value):
 
     return value == sum(summed)
 
+
 class TestDifferentNumbers(unittest.TestCase):
 
     def test_true(self):
-        pass
+        self.assertTrue(narcissistic(371), "371 is a narcissistic number")
+
     def test_false(self):
-        pass
+        self.assertFalse(narcissistic(122), "122 is not a narcissistic number")
+
     def test_true2(self):
-        pass
+        self.assertTrue(narcissistic(7), "7 is a narcissistic number")
+
     def test_false2(self):
+        self.assertFalse(narcissistic(4887), "4887 is not a narcissistic number")
+
 
 if __name__ == "__main__":
-    print(narcissistic(1938))
+    unittest.main()
