@@ -3,4 +3,4 @@ def narcissistic(value):
 
 
 if __name__ == "__main__":
-    print(alphabet_position("The sunset sets at twelve o' clock."))
+    print(narcissistic(123))
