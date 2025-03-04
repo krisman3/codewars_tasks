@@ -13,24 +13,21 @@ numbers.
 """
 
 
-def order(sentence: str):
+def order(sentence):
     if not sentence:
         return ""
 
     words = sentence.split()
-    sorted_words = []
+    sorted_words = [None] * len(words)
 
     for word in words:
-        for chr in word:
-            if chr.isdigit():
-                index = int(chr) - 1
-                sorted_words.insert(index, word)
+        for char in word:
+            if char.isdigit():
+                index = int(char) - 1
+                sorted_words[index] = word
                 break
-
-    sorted_words = [word for word in sorted_words if word is not None]
 
     return " ".join(sorted_words)
 
-
 if __name__ == "__main__":
-    print(order("is2 Thi1s T4est 3a"))
+    print(order("Fo1r the2 4of g3ood pe6ople th5e"))
