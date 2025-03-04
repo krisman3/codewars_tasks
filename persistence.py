@@ -6,4 +6,25 @@ For example (Input --> Output):
 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2, there are 4 multiplications)
 4 --> 0 (because 4 is already a one-digit number, there is no multiplication)
 """
+import math
 
+
+def persistence(n):
+    count = 1
+    perst = True
+    if len(str(n)) == 1:
+        return 0
+    while perst:
+        n = math.prod([int(i) for i in str(n)])
+        if len(str(n)) == 1:
+            perst = False
+            return count
+
+        else:
+            count += 1
+
+    return count
+
+
+if __name__ == "__main__":
+    print(persistence(4))
