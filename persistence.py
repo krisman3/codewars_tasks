@@ -10,7 +10,6 @@ import math
 import unittest
 
 
-
 def persistence(n):
     count = 1
     perst = True
@@ -27,12 +26,14 @@ def persistence(n):
 
     return count
 
+
 class TestNumbers(unittest.TestCase):
 
     def test_numbers(self):
         self.assertEqual(persistence(39), 3)
         self.assertEqual(persistence(4), 0)
         self.assertEqual(persistence(999), 4)
+
 
 if __name__ == "__main__":
     unittest.main()
