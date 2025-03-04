@@ -11,6 +11,19 @@ numbers.
 "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 ""  -->
 """
-def order(sentence):
-  # code here
-  return ""
+
+
+def order(sentence: str):
+    lst_words = sentence.split()
+    temp = '' # used for the switch of positions
+    if len(sentence) == 0:
+        return ''
+    for i in range(len(lst_words)): # iterating the words by index
+        for j in range(len(lst_words[i])):
+            if lst_words[i][j].isdigit(): # index of the digit
+                temp = lst_words[i]
+                lst_words[j] = lst_words[i]
+                lst_words[i] = temp
+    return ' '.join(lst_words)
+
+
