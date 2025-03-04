@@ -7,6 +7,8 @@ For example (Input --> Output):
 4 --> 0 (because 4 is already a one-digit number, there is no multiplication)
 """
 import math
+import unittest
+
 
 
 def persistence(n):
@@ -25,6 +27,11 @@ def persistence(n):
 
     return count
 
+class TestNumbers(unittest.TestCase):
 
+    def test_numbers(self):
+        self.assertEqual(persistence(39), 3)
+        self.assertEqual(persistence(4), 0)
+        
 if __name__ == "__main__":
-    print(persistence(4))
+    unittest.main()
