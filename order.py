@@ -14,16 +14,23 @@ numbers.
 
 
 def order(sentence: str):
-    lst_words = sentence.split()
-    temp = '' # used for the switch of positions
-    if len(sentence) == 0:
-        return ''
-    for i in range(len(lst_words)): # iterating the words by index
-        for j in range(len(lst_words[i])):
-            if lst_words[i][j].isdigit(): # index of the digit
-                temp = lst_words[i]
-                lst_words[j] = lst_words[i]
-                lst_words[i] = temp
-    return ' '.join(lst_words)
+    if not sentence:
+        return ""
+
+    words = sentence.split()
+    sorted_words = []
+
+    for word in words:
+        for chr in word:
+            if chr.isdigit():
+                index = int(chr) - 1
+                sorted_words.insert(index, word)
+                break
+
+    sorted_words = [word for word in sorted_words if word is not None]
+
+    return " ".join(sorted_words)
 
 
+if __name__ == "__main__":
+    print(order("is2 Thi1s T4est 3a"))
