@@ -16,6 +16,11 @@ def is_pangram(st: str):
     return set(filtered_st) == alphabet_set
 
 
+class TestFullAlphabet(unittest.TestCase):
+    def test_first_string(self):
+        self.assertTrue(is_pangram("The quick brown fox jumps over the lazy dog"))
+        self.assertTrue(is_pangram('Pack my box with five dozen liquor jugs.'))
+
 
 if __name__ == "__main__":
     is_pangram("The quick brown fox jumps over the lazy dog")
