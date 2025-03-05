@@ -13,6 +13,8 @@ def is_pangram(st: str):
     alphabet_set = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
                     't', 'u', 'v', 'w', 'x', 'y', 'z'}
     filtered_st = [let.lower() for let in st if let.isalpha()]
+    return set(filtered_st) == alphabet_set
+
 
 
 if __name__ == "__main__":
