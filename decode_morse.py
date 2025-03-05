@@ -23,3 +23,28 @@ decode_morse('.... . -.--   .--- ..- -.. .')
 """
 
 
+def decode_morse(morse_code: str):
+    CODE_reversed = {'..-.': 'F', '-..-': 'X',
+                     '.--.': 'P', '-': 'T', '..---': '2',
+                     '....-': '4', '-----': '0', '--...': '7',
+                     '...-': 'V', '-.-.': 'C', '.': 'E', '.---': 'J',
+                     '---': 'O', '-.-': 'K', '----.': '9', '..': 'I',
+                     '.-..': 'L', '.....': '5', '...--': '3', '-.--': 'Y',
+                     '-....': '6', '.--': 'W', '....': 'H', '-.': 'N', '.-.': 'R',
+                     '-...': 'B', '---..': '8', '--..': 'Z', '-..': 'D', '--.-': 'Q',
+                     '--.': 'G', '--': 'M', '..-': 'U', '.-': 'A', '...': 'S', '.----': '1', '   ': ' ', ' ': '',
+                     '...-..-': '$'}
+    # lst_morse = ' '.join([CODE_reversed[i] for i in morse_code.split(' ')])
+    spaces_split = morse_code.strip().split('   ')
+    sentence = []
+
+    for word in spaces_split:
+        decoded_word = ''.join(CODE_reversed[letter] for letter in word.split() if letter in CODE_reversed)
+        sentence.append(decoded_word.upper())
+
+    return ' '.join(sentence)
+
+
+
+if __name__ == "__main__":
+    print(decode_morse('.... . -.--   .--- ..- -.. .'))
