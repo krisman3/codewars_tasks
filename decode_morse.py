@@ -45,6 +45,5 @@ def decode_morse(morse_code: str):
     return ' '.join(sentence)
 
 
-
 if __name__ == "__main__":
     print(decode_morse('.... . -.--   .--- ..- -.. .'))
