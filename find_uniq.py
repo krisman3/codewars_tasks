@@ -9,13 +9,13 @@ The tests contain some very huge arrays, so think about performance.
 """
 
 
-def find_uniq(arr):
+def find_uniq(arr: list):
     unique = arr[0]
     for i in arr:
-        if unique != i:
+        if unique != i and arr.count(i) == 1:
             return i
-    return arr[0]
+    return unique
 
 
 if __name__ == "__main__":
-    print(find_uniq([1, 1, 2, 1, 1, 1]))
+    print(find_uniq([2, 1, 1, 1, 1, 1]))
