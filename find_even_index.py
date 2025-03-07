@@ -9,15 +9,14 @@ If there is no index that would make this happen, return -1.
 def find_even_index(arr):
     if not arr:
         return -1
-    temp_sum_left = 0
-    temp_sum_right = 0
+
     for i in range(len(arr)):
-        for j in range(len(arr) - 1, i, -1):
-            temp_sum_left += int(arr[i])
-            temp_sum_right += int(arr[j])
+        temp_sum_left = sum(arr[:i])
+        temp_sum_right = sum(arr[i+1:])
+
         if temp_sum_right == temp_sum_left:
-            return i + 1
-    return f"left: {temp_sum_left} / right: {temp_sum_right}"
+            return i
+    return -1
 
 
 if __name__ == "__main__":
