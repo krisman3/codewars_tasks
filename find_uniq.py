@@ -7,6 +7,7 @@ It’s guaranteed that array contains at least 3 numbers.
 
 The tests contain some very huge arrays, so think about performance.
 """
+import unittest
 
 
 def find_uniq(arr: list):
@@ -15,6 +16,13 @@ def find_uniq(arr: list):
         if unique != i and arr.count(i) == 1:
             return i
     return unique
+
+
+class TestUniqueLists(unittest.TestCase):
+    def test_uniques(self):
+        self.assertEqual(find_uniq([2, 1, 1, 1, 1, 1]), 2)
+        self.assertEqual(find_uniq([1, 1, 0.55, 1, 1, 1]), 0.55)
+        self.assertEqual(find_uniq([1, 1, 1, 1, 1, 3]), 3)
 
 
 if __name__ == "__main__":
