@@ -36,6 +36,11 @@ class TestStrings(unittest.TestCase):
         self.assertEqual(solution("asdjaskdj"), ["as", "dj", "as", "kd", "j_"])
         self.assertEqual(solution("abc"), ["ab", "c_"])
 
+    def test_negatives(self):
+        self.assertNotEqual(solution("asdfadsfa"), ["as", "df", "ad", "sf", "a"])
+        self.assertNotEqual(solution("asdjaskdjj"), ["as", "dj", "as", "kd", "j_"])
+        self.assertNotEqual(solution("abcc"), ["ab", "c_"])
+
 
 if __name__ == "__main__":
     print(solution("asdfadsfa"))
