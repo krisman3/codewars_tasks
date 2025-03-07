@@ -1,3 +1,6 @@
+import unittest
+
+
 def solution(s):
     if not s:
         return []
@@ -22,11 +25,16 @@ def solution(s):
     return str_lst
 
 
-# class TestUniqueLists(unittest.TestCase):
-#     def test_uniques(self):
-#         self.assertEqual(find_uniq([2, 1, 1, 1, 1, 1]), 2)
-#         self.assertEqual(find_uniq([1, 1, 0.55, 1, 1, 1]), 0.55)
-#         self.assertEqual(find_uniq([1, 1, 1, 1, 1, 3]), 3)
+class TestStrings(unittest.TestCase):
+    def test_evens(self):
+        self.assertEqual(solution("asdfadsfas"), ["as", "df", "ad", "sf", "as"])
+        self.assertEqual(solution("asdjaskdja"), ["as", "dj", "as", "kd", "ja"])
+        self.assertEqual(solution("abcs"), ["ab", "cs"])
+
+    def test_odds(self):
+        self.assertEqual(solution("asdfadsfa"), ["as", "df", "ad", "sf", "a_"])
+        self.assertEqual(solution("asdjaskdj"), ["as", "dj", "as", "kd", "j_"])
+        self.assertEqual(solution("abc"), ["ab", "c_"])
 
 
 if __name__ == "__main__":
