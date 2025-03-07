@@ -14,4 +14,8 @@ def find_uniq(arr):
     for i in arr:
         if unique != i:
             return i
-    return
+    return arr[0]
+
+
+if __name__ == "__main__":
+    print(find_uniq([1, 1, 2, 1, 1, 1]))
