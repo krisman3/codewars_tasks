@@ -16,7 +16,15 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 I have also created other katas. Take a look if you enjoyed this kata!"""
 
 
-def find_missing(chars):
+def find_missing(chars: str):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
-    start_ind = 0
-    end_ind = len(chars)
+    alph_char = alphabet.index(chars[0])
+
+    for i in range(len(chars)):
+        if chars[i] != alphabet[alph_char]:
+            return alphabet[alph_char]
+        alph_char += 1
+
+
+if __name__ == "__main__":
+    print(find_missing("abcf"))
