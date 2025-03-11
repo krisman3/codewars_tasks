@@ -17,15 +17,16 @@ I have also created other katas. Take a look if you enjoyed this kata!"""
 
 
 def find_missing(chars: str):
-    chars = ''.join(chars).lower()
+    chars_str = ''.join(chars).lower()
     alphabet = "abcdefghijklmnopqrstuvwxyz"
-    alph_char = alphabet.index(chars[0])
+    alph_char = alphabet.index(chars_str[0])
 
-    for i in range(len(chars)):
-        if chars[i] != alphabet[alph_char]:
+    for i in range(len(chars_str)):
+        if chars_str[i] != alphabet[alph_char]:
             if chars[0].isupper():
                 return alphabet[alph_char].upper()
-            return alphabet[alph_char]
+            else:
+                return alphabet[alph_char]
         alph_char += 1
 
 
