@@ -12,3 +12,7 @@ With list [20,37,20,21] and number 1, the result would be [20,37,21].
 
 def delete_nth(order, max_e):
     pass
+
+
+if __name__ == "__main__":
+    print(delete_nth([1, 2, 3, 1, 2, 1, 2, 3]))
