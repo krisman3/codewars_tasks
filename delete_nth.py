@@ -30,6 +30,9 @@ class TestDifferentArrays(unittest.TestCase):
     def test_two_repeats(self):
         self.assertEqual([1, 2, 3, 1, 2, 3], delete_nth([1, 2, 3, 1, 2, 1, 2, 3], 2))
 
+    def test_one_repeat(self):
+        self.assertEqual([20, 37, 21], delete_nth([20, 37, 20, 21], 1))
+
 
 if __name__ == "__main__":
     print(delete_nth([20, 37, 20, 21], 1))
