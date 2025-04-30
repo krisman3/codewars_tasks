@@ -30,7 +30,7 @@ if exam_hour == arrival_hour:
 # Negative cases with different hour
 if exam_hour < arrival_hour:
     minute_diff = (60 - exam_minute) + arrival_minute
-    if minute_diff > 60:
+    if minute_diff >= 60:
         minute_diff -= 60
         hour_diff = arrival_hour - exam_hour
         print(f"Late\n{hour_diff}:{minute_diff:02d} hours after the start")
