@@ -18,7 +18,21 @@ elif 0 < difference <= 30:
 
 elif 30 < difference <= 59:
     print("Early")
-    print(f"{difference}")
+    print(f"{difference} minutes before the start")
 
 elif difference > 59:
-    pass  # Logic for early by more than hour to be added 
+    hours = difference // 60
+    minutes = difference % 60
+    print(f"Early\n{hours}:{minutes:02d} hours before the start")
+
+# Negative cases 
+
+elif -59 <= difference < 0:
+    print("Late")
+    print(f"{abs(difference)} minutes after the start")
+    
+elif difference <= -60:
+    print("Late")
+    hours = abs(difference) // 60
+    minutes = abs(difference) % 60
+    print(f"Late\n{hours}:{minutes:02d} hours after the start")
