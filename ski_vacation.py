@@ -18,3 +18,28 @@ if type_of_room == 'room for one person':
         total_cost = temp_price - (temp_price * reviews['negative'])
         print(f"{total_cost:.2f}") 
         
+elif type_of_room == 'apartment':
+    if days < 10:
+        temp_price = (prices['apartment'] * days)
+        total_cost = temp_price  (temp_price * discounts['low_apartment'])
+        if review_placed == 'positive':
+            total_cost = temp_price + (temp_price * reviews['positive']) 
+        elif review_placed == 'negative':
+            total_cost = temp_price - (temp_price * reviews['negative'])
+        print(f"{total_cost:.2f}")
+    elif 10 <= days <= 15:
+        temp_price = (prices['apartment'] * days)
+        total_cost = temp_price - (temp_price * discounts['mid_apartment'])
+        if review_placed == 'positive':
+            total_cost = total_cost + (total_cost * reviews['positive'])
+        elif review_placed == 'negative':
+            total_cost = total_cost - (total_cost * reviews['negative'])
+        print(f"final: {total_cost:.2f}")
+    elif days < 15:
+        temp_price = (prices['apartment'] * days)
+        total_cost = temp_price - (temp_price * discounts['high_apartment'])
+        if review_placed == 'positive':
+            total_cost = total_cost + (total_cost * reviews['positive'])
+        elif review_placed == 'negative':
+            total_cost = total_cost - (total_cost * reviews['negative'])
+        print(f"final: {total_cost:.2f}")
