@@ -4,24 +4,18 @@ numbers = []
 for i in range(n):
     numbers.append(int(input()))
 
+found = False 
+
 for j in numbers:
-    current_sum = 0
-    for k in numbers:
-        if k == j:
-            pass
-        else:
-            current_sum += k
-            
+    current_sum = sum(numbers) - j        
     if current_sum == j:
         print("Yes")
-        print("Sum = ", j)
-    # else:
-    #     current_max = max(numbers)
-    #     rest_of_sum = 0
-    #     for z in numbers:
-    #         if z == current_max:
-    #             pass
-    #         else:
-    #             rest_of_sum += z
-    #     print("No")
-    #     print(f"Diff = {current_max - rest_of_sum}")
+        print("Sum =", j)
+        found = True
+        break
+
+if not found:
+    current_max = max(numbers)
+    rest_of_sum = sum(numbers) - current_max
+    print("No")
+    print(f"Diff = {abs(current_max - rest_of_sum)}")
