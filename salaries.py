@@ -1,16 +1,16 @@
 websites = {'Facebook': 150, 'Instagram': 100, 'Reddit': 50}
-current_websites = []
 
 number_of_tabs_opened = int(input())
-salary = float(input())
+salary = int(input())
 
 for _ in range(number_of_tabs_opened):
-    if _ in websites:
-        salary -= _
+    current_website = input()
+    if current_website in websites:
+        salary -= websites[current_website]
     if salary <= 0:
         print("You have lost your salary.")
-    else:
-        continue
+        break
 
-print(salary)
+if salary > 0:
+    print(salary)
 
