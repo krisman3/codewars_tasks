@@ -1,19 +1,22 @@
 actor_name = input()
 points = float(input())
-n = int(input())
+judges = int(input())
 
-for _ in range(n):
-    letters_in_judge_name = 0
+judge_points_list = []
+for _ in range(judges):
     judge_name = input()
-    for letter in judge_name:
-        letters_in_judge_name += 1
+    letters_in_judge_name = len(judge_name)
+
     judge_points = float(input())
-    judge_points = points + ((judge_points * letters_in_judge_name) / 2) #(float(input()) * letters_in_judge_name) + points
-print(f'2. {letters_in_judge_name}')
-print(f'3. {judge_points}')
+    judge_points_list.append((judge_points * letters_in_judge_name) / 2)
+    temp_judge_points = points + sum(judge_points_list) 
+    if temp_judge_points >= 1250.5:
+        print(f"Congratulations, {actor_name} got a nominee for leading role with {judge_points:.2f}!")
+        break
+
+if temp_judge_points < 1250.5: 
+    print(f"Sorry, {actor_name} you need {1250.5 - temp_judge_points:.1f} more!")
 
 
-if points > 1250.5:
-    print(f"Congratulations, {actor_name} got a nominee for leading role with {judge_points:.2f}!")
-else:
-    print(f"Sorry, {actor_name} you need {1250-judge_points:.2f} more!")
+
+
