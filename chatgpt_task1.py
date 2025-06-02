@@ -16,19 +16,19 @@ compress_string("abc")         # "abc"
 
 def compress_string(s: str) -> str:
     final_string = []
-    current_symbol = ''
-    current_symbol_num = 0
-    for i in s:
+    current_symbol = s[0]
+    current_symbol_num = 1
+    
+    for i in s[1:]:
         if i == current_symbol:
             current_symbol_num += 1
         else:
-            final_string.append(current_symbol_num)
-            current_symbol_num = 0
+            final_string.append(f"{current_symbol}{current_symbol_num}")
             current_symbol = i
-            current_symbol_num += 1
-            final_string.append(current_symbol)
+            current_symbol_num = 1
+    final_string.append(current_symbol)
     
-    finished_str = ''.join(str(x) for x in final_string[1:len(final_string)])
-    return finished_str
+    finished_str = ''.join(final_string)
+    return finished_str if len(finished_str) < len(s) else s
         
 print(compress_string('aabcccccaaa'))
