@@ -1,4 +1,5 @@
 import random
+import unittest
 
 """
 ✅ Task 3: Simple Test Case Generator
@@ -19,5 +20,19 @@ def generate_test_cases(n: int, filename: str):
     return
 
 
-generate_test_cases(3, 'C:\\Users\\KIliev\\PycharmProjects\\Python_Tasks\\temp_files\\testcases.txt')
+generate_test_cases(0, 'C:\\Users\\KIliev\\PycharmProjects\\Python_Tasks\\temp_files\\testcases.txt')
 
+
+class TestCasesGenerator(unittest.TestCase):
+    def test_3_cases(self):
+        filename = 'C:\\Users\\KIliev\\PycharmProjects\\Python_Tasks\\temp_files\\testcases.txt'
+        generate_test_cases(3, filename)
+        with open(filename, 'r') as f:
+            lines = f.readlines()
+        self.assertEqual(len(lines), 3)
+
+    def test_empty(self):
+        pass
+
+    def test_negative(self):
+        pass
