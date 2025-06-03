@@ -12,10 +12,10 @@ Each line should be a fake test case in the form:
 
 
 def generate_test_cases(n: int, filename: str):
-    for _ in range(n):
-        random_num = random.randint(1,1000)
-        with open(filename, 'w') as f:
-            f.writelines(f"Input:{random_num} -> Expected Output: {random_num*random_num}\n")
+    with open(filename, 'w') as f:
+        for _ in range(n):
+            random_num = random.randint(1,1000)
+            f.write(f"Input:{random_num} -> Expected Output: {random_num*random_num}\n")
     return
 
 
