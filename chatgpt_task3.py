@@ -13,4 +13,11 @@ Each line should be a fake test case in the form:
 
 def generate_test_cases(n: int, filename: str):
     for _ in range(n):
-        pass
+        random_num = random.randint(1,1000)
+        with open(filename, 'w') as f:
+            f.writelines(f"Input:{random_num} -> Expected Output: {random_num*random_num}\n")
+    return
+
+
+generate_test_cases(3, 'C:\\Users\\KIliev\\PycharmProjects\\Python_Tasks\\temp_files\\testcases.txt')
+
