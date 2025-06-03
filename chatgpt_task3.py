@@ -13,6 +13,9 @@ Each line should be a fake test case in the form:
 
 
 def generate_test_cases(n: int, filename: str):
+    if n <= 0:
+        return 'Sorry, no numbers below or equal to zero!'
+
     with open(filename, 'w') as f:
         for _ in range(n):
             random_num = random.randint(1,1000)
@@ -32,7 +35,9 @@ class TestCasesGenerator(unittest.TestCase):
         self.assertEqual(len(lines), 3)
 
     def test_empty(self):
-        pass
+        filename = 'C:\\Users\\KIliev\\PycharmProjects\\Python_Tasks\\temp_files\\testcases.txt'
+        self.assertEqual('Sorry, no numbers below or equal to zero!', generate_test_cases(0, filename))
 
     def test_negative(self):
-        pass
+        filename = 'C:\\Users\\KIliev\\PycharmProjects\\Python_Tasks\\temp_files\\testcases.txt'
+        self.assertEqual('Sorry, no numbers below or equal to zero!', generate_test_cases(-1, filename))
