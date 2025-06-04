@@ -24,4 +24,27 @@
 Пети ред – процентът изкачващи Еверест
 """
 
-group_num = int(input())
+num_of_groups = int(input())
+total_people = 0
+people_list = {'Musala': 0, 'Montblanc': 0, 'Kilimangaro': 0, 'k2': 0, 'Everest': 0}
+for i in range(num_of_groups):
+    num_of_people = int(input())
+    total_people += num_of_people
+    if num_of_people <= 5:
+        people_list['Musala'] += num_of_people
+    elif 6 <= num_of_people <= 12:
+        people_list['Montblanc'] += num_of_people
+    elif 13 <= num_of_people <= 25:
+        people_list['Kilimangaro'] += num_of_people
+    elif 26 <= num_of_people <= 40:
+        people_list['k2'] += num_of_people
+    else:
+        people_list['Everest'] += num_of_people
+
+
+print(f"{(people_list['Musala'] / total_people) * 100:.2f}")
+print(f"{(people_list['Montblanc'] / total_people) * 100:.2f}")
+print(f"{(people_list['Kilimangaro'] / total_people) * 100:.2f}")
+print(f"{(people_list['k2'] / total_people) * 100:.2f}")
+print(f"{(people_list['Everest'] / total_people) * 100:.2f}")
+
