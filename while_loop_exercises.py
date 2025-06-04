@@ -23,4 +23,14 @@ while security:
     else:
         continue
 
+init_max = int(input())
+new_num = 0
+lower = True
+
+while lower:
+    new_num += int(input())
+    if new_num >= init_max:
+        print(new_num)
+        lower = False
+
 """
