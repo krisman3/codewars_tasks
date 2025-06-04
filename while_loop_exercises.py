@@ -9,7 +9,7 @@ while continuous:
         continuous = False
 
 
-####
+##############################
 
 name = input()
 password = input()
@@ -23,6 +23,9 @@ while security:
     else:
         continue
 
+##############################
+
+
 init_max = int(input())
 new_num = 0
 lower = True
@@ -32,5 +35,14 @@ while lower:
     if new_num >= init_max:
         print(new_num)
         lower = False
+
+##############################
+
+n = int(input())
+counter = 1
+
+while counter <= n:
+    print(counter)
+    counter = counter * 2 + 1
 
 """
