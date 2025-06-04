@@ -1,3 +1,5 @@
+"""
+
 continuous = True
 while continuous:
     word = input()
@@ -5,3 +7,6 @@ while continuous:
         print(word)
     else:
         continuous = False
+
+"""
+
