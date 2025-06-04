@@ -46,3 +46,26 @@ while counter <= n:
     counter = counter * 2 + 1
 
 """
+
+##############################
+
+curr_balance = 0
+continuous = True
+input_value = ''
+while continuous:
+    try:
+        input_value = float(input())
+    except ValueError:
+        print(f"Total: {curr_balance:.2f}")
+        break
+    if float(input_value) > 0:
+        curr_balance += float(input_value)
+        print(f'Increase: {float(input_value):.2f}')
+    elif input_value == 'NoMoreMoney':
+        print(f"Total: {curr_balance:.2f}")
+        break
+    elif input_value <= 0:
+        print('Invalid operation!')
+        print(f"Total: {curr_balance:.2f}")
+        break
+
