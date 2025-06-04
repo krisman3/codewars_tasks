@@ -42,9 +42,9 @@ for i in range(num_of_groups):
         people_list['Everest'] += num_of_people
 
 
-print(f"{(people_list['Musala'] / total_people) * 100:.2f}")
-print(f"{(people_list['Montblanc'] / total_people) * 100:.2f}")
-print(f"{(people_list['Kilimangaro'] / total_people) * 100:.2f}")
-print(f"{(people_list['k2'] / total_people) * 100:.2f}")
-print(f"{(people_list['Everest'] / total_people) * 100:.2f}")
+print(f"{(people_list['Musala'] / total_people) * 100:.2f}%")
+print(f"{(people_list['Montblanc'] / total_people) * 100:.2f}%")
+print(f"{(people_list['Kilimangaro'] / total_people) * 100:.2f}%")
+print(f"{(people_list['k2'] / total_people) * 100:.2f}%")
+print(f"{(people_list['Everest'] / total_people) * 100:.2f}%")
 
