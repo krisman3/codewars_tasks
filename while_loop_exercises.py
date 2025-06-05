@@ -114,8 +114,22 @@ while grade <= 12 or strikes == 2:
             print(f"{name} has been excluded at {grade} grade")
             break
     elif grade == 12:
-        score_list.append(curr_score)
+        # score_list.append(curr_score)
         print(f"{name} graduated. Average grade: {(sum(score_list) / 12):.2f}")
     else:
         score_list.append(curr_score)
         grade += 1
+
+# Gosho
+# 5
+# 5.5
+# 6
+# 5.43
+# 5.5
+# 6
+# 5.55
+# 5
+# 6
+# 6
+# 5.43
+# 5
