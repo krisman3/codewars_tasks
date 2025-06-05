@@ -45,8 +45,6 @@ while counter <= n:
     print(counter)
     counter = counter * 2 + 1
 
-"""
-
 ##############################
 
 curr_balance = 0
@@ -69,3 +67,55 @@ while continuous:
         print(f"Total: {curr_balance:.2f}")
         break
 
+
+
+##############################
+
+
+lst_nums = []
+data = int(input())
+lst_nums.append(data)
+while data != 'Stop':
+    try:
+        data = int(input())
+        lst_nums.append(data)
+    except ValueError:
+        data = 'Stop'
+print(max(lst_nums))
+
+
+##############################
+
+
+lst_nums = []
+data = int(input())
+lst_nums.append(data)
+while data != 'Stop':
+    try:
+        data = int(input())
+        lst_nums.append(data)
+    except ValueError:
+        data = 'Stop'
+print(min(lst_nums))
+
+##############################
+"""
+
+name = input()
+strikes = 0
+grade = 1
+score_list = []
+
+while grade <= 12 or strikes == 2:
+    curr_score = float(input())
+    if curr_score < 4:
+        strikes += 1
+        if strikes == 2:
+            print(f"{name} has been excluded at {grade} grade")
+            break
+    elif grade == 12:
+        score_list.append(curr_score)
+        print(f"{name} graduated. Average grade: {(sum(score_list) / 12):.2f}")
+    else:
+        score_list.append(curr_score)
+        grade += 1
