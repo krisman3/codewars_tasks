@@ -10,8 +10,8 @@ class BankAccount:
         if amount > self.balance:
             return f'Insufficient funds!'
         else:
-            new_balance = self.balance - amount
-            return f'{amount} lv. withdrawn. New balance: {new_balance}'
+            self.balance -= amount
+            return f'{amount} lv. withdrawn. New balance: {self.balance}'
 
     def check_balance(self):
         return f'{self.balance} lv.'
