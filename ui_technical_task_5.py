@@ -22,5 +22,7 @@ inactive_user = {'username': 'joro_pochivka', 'age': 18, 'is_active': False, 'ro
 # happy path EDITOR
 editor_dict = {'username': 'doom_guy', 'age': 18, 'is_active': True, 'roles': ['admin']}
 
-# underaged acc
-editor_dict = {'username': 'doom_guy', 'age': 18, 'is_active': True, 'roles': ['admin']}
+# underage acc
+underage_acc = {'username': 'doom_guy', 'age': 17, 'is_active': True, 'roles': ['admin']}
+
+
